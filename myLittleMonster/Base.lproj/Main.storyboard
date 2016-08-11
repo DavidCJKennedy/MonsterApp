@@ -27,6 +27,28 @@
                                     <constraint firstAttribute="height" constant="60" id="deu-CU-KTK"/>
                                 </constraints>
                             </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="livespanel" translatesAutoresizingMaskIntoConstraints="NO" id="aH2-D5-TdX" userLabel="diedPanel">
+                                <rect key="frame" x="144" y="-30" width="313" height="192"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="313" id="nUN-UF-s0e"/>
+                                    <constraint firstAttribute="height" constant="192" id="pfC-fw-OSa"/>
+                                </constraints>
+                            </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUa-d0-64q">
+                                <rect key="frame" x="174" y="35" width="246" height="63"/>
+                                <color key="backgroundColor" red="0.31764705882352939" green="0.20000000000000001" blue="0.12941176470588237" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="246" id="LIS-0S-RFg"/>
+                                    <constraint firstAttribute="height" constant="63" id="TUG-Cs-SRw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Your Pet Died!! Tap to replay!">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="restartGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cpo-fh-5fL"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="livespanel" translatesAutoresizingMaskIntoConstraints="NO" id="8Xh-QK-Dep">
                                 <rect key="frame" x="180" y="28" width="240" height="70"/>
                                 <constraints>
@@ -109,11 +131,18 @@
                             <constraint firstItem="DaW-mL-L6B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ogg-oR-sAn"/>
                             <constraint firstItem="VGw-AS-hwx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-40" id="QMD-rb-Nze"/>
                             <constraint firstItem="aI3-dB-BwY" firstAttribute="centerY" secondItem="8Xh-QK-Dep" secondAttribute="centerY" id="acq-f2-ic6"/>
-                            <constraint firstItem="DaW-mL-L6B" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="cyT-Av-QVz"/>
+                            <constraint firstItem="FUa-d0-64q" firstAttribute="centerX" secondItem="aH2-D5-TdX" secondAttribute="centerX" id="ath-8O-edW"/>
+                            <constraint firstItem="DaW-mL-L6B" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="cyT-Av-QVz">
+                                <variation key="heightClass=compact" constant="30"/>
+                            </constraint>
+                            <constraint firstItem="DaW-mL-L6B" firstAttribute="top" secondItem="8Xh-QK-Dep" secondAttribute="bottom" constant="10" id="eAv-sZ-Q90"/>
                             <constraint firstItem="8Xh-QK-Dep" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="eze-8U-XFc"/>
                             <constraint firstItem="6DX-gH-A1a" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gLd-Ar-erc"/>
                             <constraint firstAttribute="trailing" secondItem="A9v-BV-cKw" secondAttribute="trailing" id="gbX-x4-NVf"/>
                             <constraint firstAttribute="trailing" secondItem="6DX-gH-A1a" secondAttribute="trailing" id="izR-PM-ags"/>
+                            <constraint firstItem="aH2-D5-TdX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lhZ-aI-tKM"/>
+                            <constraint firstItem="aH2-D5-TdX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-30" id="md6-Vf-QRu"/>
+                            <constraint firstItem="FUa-d0-64q" firstAttribute="centerY" secondItem="aH2-D5-TdX" secondAttribute="centerY" id="qZK-rs-GYs"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6DX-gH-A1a" secondAttribute="bottom" id="tlu-Vh-JVV"/>
                         </constraints>
                         <variation key="default">
@@ -121,6 +150,7 @@
                                 <exclude reference="5pj-pk-wxj"/>
                                 <exclude reference="Hcg-fd-omi"/>
                                 <exclude reference="NLY-DG-ySO"/>
+                                <exclude reference="ONf-Is-Z3f"/>
                                 <exclude reference="Ogg-oR-sAn"/>
                                 <exclude reference="cyT-Av-QVz"/>
                             </mask>
@@ -129,6 +159,7 @@
                             <mask key="constraints">
                                 <include reference="5pj-pk-wxj"/>
                                 <exclude reference="D9c-jA-l3o"/>
+                                <exclude reference="ONf-Is-Z3f"/>
                                 <include reference="cyT-Av-QVz"/>
                             </mask>
                         </variation>
@@ -139,12 +170,16 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="diedButton" destination="FUa-d0-64q" id="1pa-u6-5AN"/>
+                        <outlet property="diedPanel" destination="aH2-D5-TdX" id="jKn-Hh-dhz"/>
                         <outlet property="foodImg" destination="RfE-tt-Yo1" id="puE-IT-Vyb"/>
                         <outlet property="heartImg" destination="n31-3I-MFS" id="Uyg-A0-pkP"/>
+                        <outlet property="livesPanel" destination="8Xh-QK-Dep" id="dqO-n4-o6o"/>
                         <outlet property="monsterImg" destination="VGw-AS-hwx" id="R05-yW-sjk"/>
                         <outlet property="penalty1Img" destination="emf-aC-zZP" id="NRn-Rp-Dhk"/>
                         <outlet property="penalty2Img" destination="yny-wh-bcT" id="s6X-fd-9Ja"/>
                         <outlet property="penalty3Img" destination="oo7-Vf-ecs" id="Yiy-cU-1T3"/>
+                        <outlet property="skullsStackView" destination="aI3-dB-BwY" id="no1-u9-ImI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

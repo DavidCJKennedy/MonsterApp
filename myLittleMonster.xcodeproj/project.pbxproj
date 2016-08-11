@@ -21,6 +21,7 @@
 		CE6DB7861D5BB7FF000290FF /* death.wav in Resources */ = {isa = PBXBuildFile; fileRef = CE6DB7811D5BB7FF000290FF /* death.wav */; };
 		CE6DB7871D5BB7FF000290FF /* heart.wav in Resources */ = {isa = PBXBuildFile; fileRef = CE6DB7821D5BB7FF000290FF /* heart.wav */; };
 		CE6DB7881D5BB7FF000290FF /* skull.wav in Resources */ = {isa = PBXBuildFile; fileRef = CE6DB7831D5BB7FF000290FF /* skull.wav */; };
+		CE6DB78A1D5BC52C000290FF /* pickMonster.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6DB7891D5BC52C000290FF /* pickMonster.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		CE6DB7811D5BB7FF000290FF /* death.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = death.wav; path = ../death.wav; sourceTree = "<group>"; };
 		CE6DB7821D5BB7FF000290FF /* heart.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = heart.wav; path = ../heart.wav; sourceTree = "<group>"; };
 		CE6DB7831D5BB7FF000290FF /* skull.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = skull.wav; path = ../skull.wav; sourceTree = "<group>"; };
+		CE6DB7891D5BC52C000290FF /* pickMonster.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = pickMonster.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				CE6DB7591D5B6AEE000290FF /* Info.plist */,
 				CE6DB77B1D5B8E30000290FF /* dragImage.swift */,
 				CE6DB77D1D5BA113000290FF /* monsterImg.swift */,
+				CE6DB7891D5BC52C000290FF /* pickMonster.storyboard */,
 			);
 			path = myLittleMonster;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				CE6DB7861D5BB7FF000290FF /* death.wav in Resources */,
 				CE6DB7871D5BB7FF000290FF /* heart.wav in Resources */,
 				CE6DB7851D5BB7FF000290FF /* cave-music.mp3 in Resources */,
+				CE6DB78A1D5BC52C000290FF /* pickMonster.storyboard in Resources */,
 				CE6DB7581D5B6AEE000290FF /* LaunchScreen.storyboard in Resources */,
 				CE6DB7551D5B6AEE000290FF /* Assets.xcassets in Resources */,
 				CE6DB7531D5B6AEE000290FF /* Main.storyboard in Resources */,

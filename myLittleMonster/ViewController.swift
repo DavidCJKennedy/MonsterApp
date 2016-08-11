@@ -17,6 +17,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var penalty1Img: UIImageView!
     @IBOutlet weak var penalty2Img: UIImageView!
     @IBOutlet weak var penalty3Img: UIImageView!
+    @IBOutlet weak var diedPanel: UIImageView!
+    @IBOutlet weak var diedButton: UIButton!
+    @IBOutlet weak var skullsStackView: UIStackView!
+    @IBOutlet weak var livesPanel: UIImageView!
+    
     
     let DIM_ALPHA: CGFloat = 0.2
     let OPAQUE: CGFloat = 1.0
@@ -68,10 +73,6 @@ class ViewController: UIViewController {
         } catch let err as NSError {
             print(err.debugDescription)
         }
-        
-        
-        
-        
         
         startTimer()
  
@@ -152,10 +153,46 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func restartGame(sender: AnyObject) {
+        
+        penalties = 0
+        currentItem = 0
+        monsterHappy = false
+        musicPlayer.play()
+        startTimer()
+        
+        heartImg.hidden = false
+        foodImg.hidden = false
+        livesPanel.hidden = false
+        skullsStackView.hidden = false
+        diedPanel.hidden = true
+        diedButton.hidden = true
+        
+        penalty1Img.alpha = DIM_ALPHA
+        penalty2Img.alpha = DIM_ALPHA
+        penalty3Img.alpha = DIM_ALPHA
+        
+        monsterImg.playIdleAnimation()
+        
+    }
+    
+    
+    
+    
+    
     func gameOver(){
         timer.invalidate()
         monsterImg.playDeathAnimation()
         sfxDeath.play()
+        musicPlayer.stop()
+        
+        heartImg.hidden = true
+        foodImg.hidden = true
+        livesPanel.hidden = true
+        skullsStackView.hidden = true
+        diedPanel.hidden = false
+        diedButton.hidden = false
+        
     }
 
 

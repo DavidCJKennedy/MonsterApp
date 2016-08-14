@@ -21,7 +21,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var diedButton: UIButton!
     @IBOutlet weak var skullsStackView: UIStackView!
     @IBOutlet weak var livesPanel: UIImageView!
-    
+    @IBOutlet weak var moleIdle: UIButton!
+    @IBOutlet weak var monsterIdle: UIButton!
+    @IBOutlet weak var petLbl: UILabel!
+    @IBOutlet weak var moleImg: MoleImg!
     
     let DIM_ALPHA: CGFloat = 0.2
     let OPAQUE: CGFloat = 1.0
@@ -73,10 +76,48 @@ class ViewController: UIViewController {
         } catch let err as NSError {
             print(err.debugDescription)
         }
-        
-        startTimer()
  
     }
+    
+    
+    @IBAction func  monsterTapped(sender: AnyObject) {
+        monsterImg.hidden = false
+        livesPanel.hidden = false
+        skullsStackView.hidden = false
+        foodImg.hidden = false
+        heartImg.hidden = false
+        
+        moleIdle.hidden = true
+        moleImg.hidden = true
+        monsterIdle.hidden = true
+        petLbl.hidden = true
+        diedButton.hidden = true
+        diedPanel.hidden = true
+    
+        startTimer()
+        
+        
+    }
+    
+    @IBAction func moleTapped(sender: AnyObject) {
+        moleImg.hidden = false
+        livesPanel.hidden = false
+        skullsStackView.hidden = false
+        foodImg.hidden = false
+        heartImg.hidden = false
+        
+        moleIdle.hidden = true
+        monsterImg.hidden = true
+        monsterIdle.hidden = true
+        petLbl.hidden = true
+        diedButton.hidden = true
+        diedPanel.hidden = true
+        
+        startTimer()
+        
+    }
+    
+    
     
     func itemDroppedOnCharacter(notif: AnyObject) {
        monsterHappy = true
@@ -153,6 +194,11 @@ class ViewController: UIViewController {
         
     }
     
+
+    
+    
+    
+    
     @IBAction func restartGame(sender: AnyObject) {
         
         penalties = 0
@@ -173,6 +219,7 @@ class ViewController: UIViewController {
         penalty3Img.alpha = DIM_ALPHA
         
         monsterImg.playIdleAnimation()
+        moleImg.playMoleIdleAnimation()
         
     }
     
@@ -183,6 +230,7 @@ class ViewController: UIViewController {
     func gameOver(){
         timer.invalidate()
         monsterImg.playDeathAnimation()
+        moleImg.playMoleDeadAnimation()
         sfxDeath.play()
         musicPlayer.stop()
         
